@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    title simple book store
+    link(rel='stylesheet', href='static/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.2.1.js')
+    script(type='text/javascript', src='static/js/main.js')
+  body
+    .book-container
+      h1 simple book store
+      h2 ALL BOOKS
+      hr
+      input(type="text" id="search" onkeyup="search()")
+      .list-group

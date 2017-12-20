@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    title simple book store
+    link(rel='stylesheet', href='static/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.2.1.js')
+    script(type='text/javascript', src='static/js/main.js')
+  body
+    .book-container
+      h1 simple book store
+      h2 ADD A BOOK
+      .new-book-form
+        .row
+          label(for='title') Title
+          input#title.title(type='text', placeholder=' title')
+        .row
+          label(for='author') Author
+          input#author.author(type='text', placeholder=' author')
+        .row
+          label(for='image') Image URL
+          input#image.image(type='text', placeholder=' image URL')
+        button.add-button(onclick='addBook()') Add Book
+      hr
+      .list-group

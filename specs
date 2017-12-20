@@ -1,0 +1,25 @@
+<script src="https://gist.github.com/jaidevd/23aef12e9bf56c618c41.js"></script>
+
+Create a simple content management system that allows users to view, add, delete, and update books. Books entered in the system can be viewed in a list, as a single entry on its own page, or searched for using basic searches (by title, author, or genre).
+
+Code is well tested and all tests are passing.
+
+Stories
+Users can add books into the bookstore system via an admin page (create)
+Users can edit a book's title, author, or genre (update)
+Users can delete a book from the bookstore (delete)
+Users can search for books by title OR by author OR by genre (read)
+Users can view book details on a book detail page (read)
+Lists of books are always paginated in groups of 10
+Book detail view is linked to from the listing and search pages
+Search results are presented in a new page
+
+Stretch
+App is deployed and live on the web (consider using Heroku)
+All source code is written with ES6
+Users have their own account and can sign up and sign in/out
+Users have one of three roles: admin, clerk, reader
+Users with role reader can only view and search for books
+Users with role clerk can edit books in addition to viewing/searching
+Users with role admin can perform all actions (create, read, update, delete) with books
+Books have a price, cover image, publisher, and ISBN number
