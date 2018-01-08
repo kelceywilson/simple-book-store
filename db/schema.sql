@@ -11,11 +11,12 @@ CREATE TABLE users (
 
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
-  title varchar(50) NOT NULL,
-  author varchar(50) NOT NULL,
-  genre varchar(50) NOT NULL,
-  price money NOT NULL DEFAULT 0.00,
-  image varchar(255),
+  title varchar(100) NOT NULL,
+  author_last varchar(50),
+  author_first varchar(50),
+  genre varchar(50),
   publisher varchar(50),
+  price money DEFAULT 0.00,
+  image varchar(255),
   isbn varchar(20)
 );

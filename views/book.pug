@@ -1,0 +1,28 @@
+extends layout
+
+block main
+  .book-container
+    h2 ONE BOOK
+    .list-group            
+      div(class='center-text single-book')
+        hr
+        form(class='column' action='/books/'+book.id+'?_method=PUT' method='POST')
+          .row
+            .column
+              span(class='title') #{book.title}
+              span(class='author-first') #{book.author_first}
+              span(class='author-last') #{book.author_last}
+              span(class='genre') #{book.genre}
+              span(class='price') #{book.price}
+              span(class='publisher') #{book.publisher}
+              span(class='isbn') #{book.isbn}
+            img(class='image single-book-image' src=book.image alt='book cover')
+          .row.space-around
+            input(class='buttons save-button hide' type='submit' value='Save')
+            input(type="hidden" name="_method" value="PUT")
+        button(class='buttons cancel-button hide' onClick='cancelBookEdit()') Cancel
+        .row.space-around
+          button(class='buttons edit-button but-'+book.id onClick='editBook(this)' data-id=book.id data-url=book.image) Edit
+          form(class='buttons delete-button' action='/books/'+book.id+'?_method=DELETE' method='POST')
+            input(class='input-button' type='submit' value='Delete')
+            input(type="hidden" name="_method" value="DELETE")

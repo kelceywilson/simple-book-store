@@ -1,111 +1,133 @@
 /*Custom styles here*/
+/* margin-right: auto */
 body {
   margin: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 25px;
-}
-h1 {
-  background-color: lightgrey;
-  line-height: 50px;
-  text-align: center;
 }
 h2 {
   text-align: center;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 h4 {
   margin-bottom: 0;
 }
-input {
-  width: 100%;
-}
-label, input {
+label {
   display: inline-block;
   white-space: nowrap;
-  margin: 5px;
   line-height: 25px;
-  font-size: .8em;
+  font-size: 1em;
+  margin: 5px 15px;
 }
-.reset-seed {
-  text-align: center;
-  font-size: .8em;
-  margin-top: -10px;
+.addInput {
+  width: 100%;
+  margin: 5px 15px;
 }
-.edit {
-  width: auto;
-}
-.book-container {
-  width: 50%;
+.banner {
+  background-color: lightgrey;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
   min-width: 350px;
+  width: 50%;
 }
 .book-column {
   display: flex;
   flex-direction: column;
 }
-.row {
+.center-text {
+  text-align: center;
+}
+.column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.flex-end {
+  justify-content: flex-end;
 }
 .hide {
   display: none;
+}
+.list-group {
+  display: flex;
+  justify-content: center;
+}
+.margin10 {
+  margin: 0 10px;
 }
 .new-book-form {
   display: flex;
   flex-direction: column;
 }
+.page-number {
+  margin: 10px;
+  align-self:center;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+}
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
 #search {
   background-image: url('../img/search-icon.png');
   background-repeat: no-repeat;
+  height: 1.5em;
   padding: 5px 0 0 40px;
   font-size: 1em;
+  margin-left: 45px;
+  width: 400px;
 }
-.book-search {
-
-
+.single-book-div {
+  background-color: #eee;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 15px;
 }
-.single-book span, .single-book img, .single-book input {
-  display: flex;
-  flex-direction: column;
+.single-book span, .single-book input {
   margin: 5px 15px;
-  width: 90%;
   text-align: center;
 }
-.single-book img {
-  width: 40%;
-  height: 40%;
+.single-book-image {
   box-shadow: 5px 5px 5px grey;
+  height: 200px;
+  margin-left: 15px;
 }
-/* .single-book span, .single-book input, .single-book img {
-  margin: 0 15px;
-} */
+.space-around {
+  justify-content: space-around;
+}
+.space-between {
+  justify-content: space-between;
+}
 /*********************
       buttons
 **********************/
-button{
-  margin: 2px 15px;
+button, .add-button, .cancel-button, .delete-button input, .edit-button, .save-button {
+  background-color: #F1D688;
+  margin: 12px 15px;
   height: 30px;
-  min-width: 100px;
-  background-color: lightgreen;
+  width: 100px;
   font-size: .8em;
   border: none;
   border-radius: 70px;
   box-shadow: 5px 5px 5px grey;
 }
-.delete-button {
+.delete-button input {
   background-color: pink;
-  /* color: white; */
 }
-.edit-button {
-  background-color: lightblue;
-  margin-top: 70px;
-}
-.save-button {
+.cancel-button, .add-button {
   background-color: lightgreen;
+}
+.add-button {
+  float: right;
 }

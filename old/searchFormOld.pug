@@ -1,0 +1,5 @@
+.list-group.column
+  form(method='POST', action='/search')
+  .row
+    input(type="text" id="search" name='search-input' placeholder='Search all books by title, author, or genre' onkeyup="search()" onkeypress='searchDb(event)')
+    input(type='submit', style='visibility: hidden;')

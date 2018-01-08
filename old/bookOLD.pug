@@ -1,0 +1,42 @@
+extends layout
+
+block main
+  .book-container
+    h2 ONE BOOK
+    .list-group
+      div(id=book.id class=book.id + ' center-text single-book')
+        hr
+        .row
+          .column
+            p= book.title
+            i by
+            p= book.author_first + ' ' + book.author_last
+            p Genre: #{book.genre}
+            a(href='/books/' + book.id) Detail
+          img(class='book-image' src=book.image)
+            
+      div(id=book.id class='book-div-'+book.id)
+        div(class=book.id+' single-book single-book-'+book.id)
+          div(class='row edit-layout-'+book.id)
+            div(class='spans')
+              form(action='/books/'+book.id+'?_method=PUT' method='POST')
+                div.row
+                  div.column
+                    span(class='title-'+book.id) #{book.title}
+                    span(class='author-first-'+book.id) #{book.author_first}
+                    span(class='author-last-'+book.id) #{book.author_last}
+                    span(class='genre-'+book.id) #{book.genre}
+                    span(class='price-'+book.id) #{book.price}
+                    span(class='publisher-'+book.id) #{book.publisher}
+                    span(class='isbn-'+book.id) #{book.isbn}
+                  img(class='image-'+book.id src=book.image alt='book cover')            
+                div.hide.save-button
+                  input(class='save-button' type='submit' value='Save')
+                  input(type="hidden" name="_method" value="PUT")  
+              .row
+                button(class='edit-button but-'+book.id onClick='editBook(this)' data-id=book.id data-url=book.image) Edit
+                form(class='delete-button' action='/books/'+book.id+'?_method=DELETE' method='POST')
+                  input(class='input-button' type='submit' value='Delete')
+                  input(type="hidden" name="_method" value="DELETE")
+        hr
+ 

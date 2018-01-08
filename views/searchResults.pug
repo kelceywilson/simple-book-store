@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  .book-container
+    h2 SEARCH RESULTS
+    include includes/searchForm.pug
+    each book in books
+      div(id=book.id class=book.id + ' center-text single-book')
+        hr
+        .row
+          .column
+            p= book.title
+            i by
+            p= book.author_first + ' ' + book.author_last
+            p Genre: #{book.genre}
+            a(href='/books/' + book.id) Detail
+          img(class='book-image' src=book.image)

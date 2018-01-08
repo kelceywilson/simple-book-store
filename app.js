@@ -1,5 +1,9 @@
 const express = require('express')
+const methodOverride = require('method-override')
+
 const bodyParser = require('body-parser')
+// const sessions = require('client-sessions')
+// const csrf = require('csurf')
 
 const routes = require('./routes/routes.js')
 const logger = require('morgan')
@@ -9,9 +13,19 @@ app.set('port', (process.env.PORT || 3000))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(methodOverride('_method'))
+
+// app.use(express.static(__dirname + '/public'));
 
 app.use('/static', express.static('public'))
 app.set('view engine', 'pug')
+
+// app.use(sessions({
+//   cookieName: 'session',
+//   secret: 'some_random_string',
+//   duration: 30 * 60 * 1000
+// }))
+// app.use(csrf()) // this needs to be above app.use(routes) - why?
 
 app.use(routes)
 app.use(logger('dev'))

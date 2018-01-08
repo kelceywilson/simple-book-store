@@ -5,24 +5,30 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "export NODE_ENV='test' && mocha",
+    "test": "export DATABASE_URL='bookstore_test' && mocha",
     "db:create": "createdb bookstore && psql bookstore < db/schema.sql",
-    "db:reset": "dropdb bookstore && npm run db:create"
+    "db:reset": "dropdb bookstore && npm run db:create",
+    "db:seed": "psql < seed.sql",
+    "db_test:create": "createdb bookstore_test && psql bookstore_test < db/schema.sql",
+    "db_test:reset": "dropdb bookstore_test && npm run db_test:create"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "nodemon": "^1.11.0"
+    "mocha": "^4.1.0",
+    "nodemon": "^1.14.0"
   },
   "dependencies": {
     "arrow-mocha": "^1.0.1",
     "body-parser": "^1.18.2",
-    "chai": "^4.1.2",
     "express": "^4.16.2",
+    "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "pg-promise": "^7.3.2",
     "pug": "^2.0.0-rc.4"
