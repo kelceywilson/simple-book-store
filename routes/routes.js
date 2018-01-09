@@ -26,12 +26,13 @@ router.post('/search', (req, res) => {
 // CREATE one book
 // router.post('/api/books', db.createBook)
 router.post('/books', (req, res) => {
-  const {
-    title, authorLast, authorFirst, genre, price, publisher, isbn, image
-  } = req.body
-  createBook(title, authorLast, authorFirst, genre, price, publisher, isbn, image)
+  createBook(req.body)
     .then((newBook) => {
-      res.render('book', { book: newBook })
+      if (newBook === 'new row for relation "books" violates check constraint "books_title_check"'){
+        res.render('admin', { error: 'Book title is required.' })
+      } else {
+        res.render('book', { book: newBook })
+      }
     })
 })
 

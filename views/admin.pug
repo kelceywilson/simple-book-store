@@ -6,28 +6,32 @@ block main
     hr
     .new-book-form
       form(action='/books', method='post')
-        .row.flex-start
+        .row
           label(for='title') Title
-          input#title.addInput(type='text', name='title', placeholder=' title')
+            input#title.addInput(type='text', name='title', placeholder=' title')
         .row
           label(for='authorLast') Author Last Name
-          input#authorLast.addInput(type='text', name='authorLast', placeholder=' author last name')
+            input#authorLast.addInput(type='text', name='authorLast', placeholder=' author last name')
         .row
           label(for='authorFirst') Author First Name
-          input#authorFirst.addInput(type='text', name='authorFirst', placeholder=' author first name')
+            input#authorFirst.addInput(type='text', name='authorFirst', placeholder=' author first name')
         .row
           label(for='genre') Genre
-          input#genre.addInput(type='text', name='genre', placeholder=' genre')
+            input#genre.addInput(type='text', name='genre', placeholder=' genre')
         .row
           label(for='price') Price
-          input#price.addInput(type='number', name='price', placeholder=' price')
+            input#price.addInput(type='number', name='price', placeholder=' price')
         .row
           label(for='publisher') Publisher
-          input#publisher.addInput(type='text', name='publisher', placeholder=' publisher')
+            input#publisher.addInput(type='text', name='publisher', placeholder=' publisher')
         .row
           label(for='isbn') ISBN
-          input#isbn.addInput(type='text', name='isbn', placeholder=' ISBN')
+            input#isbn.addInput(type='text', name='isbn', placeholder=' ISBN')
         .row
           label(for='image') Image URL
-          input#image.addInput(type='text', name='image', placeholder=' image URL')
+            input#image.addInput(type='text', name='image', placeholder=' image URL')
         input.add-button(type='submit', value='Add Book')
+        hr
+        if error
+          .error
+            p=error

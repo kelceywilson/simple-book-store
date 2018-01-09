@@ -11,7 +11,7 @@ CREATE TABLE users (
 
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
-  title varchar(100) NOT NULL,
+  title varchar(100) CHECK (title != ''),
   author_last varchar(50),
   author_first varchar(50),
   genre varchar(50),

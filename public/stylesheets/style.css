@@ -44,6 +44,9 @@ label {
   display: flex;
   flex-direction: column;
 }
+.error {
+  color: red;
+}
 .flex-start {
   justify-content: flex-start;
 }
@@ -77,7 +80,10 @@ label {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+}
+.row label {
+  justify-content: flex-start;
 }
 #search {
   background-image: url('../img/search-icon.png');

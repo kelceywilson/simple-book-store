@@ -3,12 +3,15 @@ const pgp = require('pg-promise')()
 const connection = process.env.DATABASE_URL || 'postgres:///bookstore'
 const db = pgp(connection)
 
-// CREATE one book
-const createBook = (title, authorLast, authorFirst, genre, price, publisher, isbn, image) => {
+// CREATE one book - return custom error message to view if constraint not met
+const createBook = (bookToAdd) => {
+  const {
+    title, authorLast, authorFirst, genre, price, publisher, isbn, image
+  } = bookToAdd
   const addThisBook = 'INSERT INTO books(title, author_last, author_first, genre, price, publisher, isbn, image) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *'
   return db.one(addThisBook, [title, authorLast, authorFirst, genre, price, publisher, isbn, image])
     .then(thisBookAdded => thisBookAdded)
-    .catch(err => Object({ success: false, message: err.message }))
+    .catch(err => err.message)
 }
 
 // READ all books

@@ -8,7 +8,7 @@
     "test": "export DATABASE_URL='bookstore_test' && mocha",
     "db:create": "createdb bookstore && psql bookstore < db/schema.sql",
     "db:reset": "dropdb bookstore && npm run db:create",
-    "db:seed": "psql < seed.sql",
+    "db:seed": "psql < db/seed.sql",
     "db_test:create": "createdb bookstore_test && psql bookstore_test < db/schema.sql",
     "db_test:reset": "dropdb bookstore_test && npm run db_test:create"
   },
